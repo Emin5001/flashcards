@@ -7,13 +7,18 @@ const topicsSlice = createSlice({
     },
     reducers: {
         addTopic: (state, action) => {
-            const { id, name, icon } = action.payload;
-            state.topics[id] = {
-                id: id,
+            const { topicId, name, icon } = action.payload;
+            state.topics[topicId] = {
+                id: topicId,
                 name: name,
                 icon: icon,
                 quizIds: [],
             };
+
+            console.log(`The id is ${state.topics.id}`);
+            console.log(`The name is ${state.topics.name}`);
+            console.log(`The icon is ${state.topics.icon}`);
+            console.log(`The quizId's are ${state.topics.quizIds}`); //the output for all is undefined.
         },
         addQuizId: (state, action) => {
             const { quizId, topicId } = action.payload;

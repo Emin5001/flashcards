@@ -15,7 +15,7 @@ export default function NewTopicForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (name.length === 0) {
+    if (!(name.length)) {
       return;
     }
     
